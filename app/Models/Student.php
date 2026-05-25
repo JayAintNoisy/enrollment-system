@@ -10,7 +10,12 @@ class Student extends Model
         'student_number',
         'name',
         'email',
-        'course'
+        'course',
+        'password',
+    ];
+
+    protected $hidden = [
+        'password',
     ];
 
     public function enrollments()

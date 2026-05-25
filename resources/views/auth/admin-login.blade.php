@@ -1,12 +1,12 @@
 @extends('layouts.guest')
 
-@section('title', 'Student Login')
+@section('title', 'Admin Login')
 
 @section('content')
-    <h1 class="page-title">Student Login</h1>
-    <p class="page-subtitle">Sign in with the email and password you used during registration.</p>
+    <h1 class="page-title">Admin Login</h1>
+    <p class="page-subtitle">Enter your admin credentials to access the dashboard.</p>
 
-    <form method="POST" action="{{ route('login.submit') }}">
+    <form method="POST" action="{{ route('admin.login.submit') }}">
         @csrf
 
         <label for="email">Email</label>
@@ -21,16 +21,10 @@
             <div class="alert">{{ $message }}</div>
         @enderror
 
-        <button class="btn" type="submit">Log in</button>
+        <button class="btn" type="submit">Log in as Admin</button>
     </form>
 
     <div class="link-row">
-        <span>New to the portal?</span>
-        <a href="{{ route('register') }}">Create an account</a>
-    </div>
-
-    <div class="link-row">
-        <span>Need admin access?</span>
-        <a href="{{ route('admin.login') }}">Admin Login</a>
+        <a href="{{ route('home') }}">Back to passcode</a>
     </div>
 @endsection

@@ -63,10 +63,11 @@
                 <a href="{{ route('enrollments.index') }}" @if(Route::currentRouteName() === 'enrollments.index') class="active" @endif>Enrollments</a>
             </div>
 
-            <div class="portal-switch">
-                <span style="font-size: 0.85rem; color: #cbd5e1;">|</span>
-                <a href="{{ route('students.index') }}">← Student Portal</a>
-            </div>
+            {{-- Logout quick-action placed next to main nav for visibility --}}
+            <form method="POST" action="{{ route('logout') }}" style="margin:0 12px 0 0; display:inline-block;">
+                @csrf
+                <button type="submit" style="display:inline-block; padding:10px 14px; border-radius:999px; background:#ef4444; color:#fff; border:none; font-weight:700; cursor:pointer;">Log out</button>
+            </form>
         </header>
 
         <main class="app-main">
@@ -80,5 +81,6 @@
             Enrollment System · Admin Console
         </footer>
     </div>
+
 </body>
 </html>
